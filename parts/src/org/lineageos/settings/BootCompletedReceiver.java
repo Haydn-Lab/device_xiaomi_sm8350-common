@@ -20,10 +20,14 @@ package org.lineageos.settings;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.IBinder;
 import android.util.Log;
 import android.content.SharedPreferences;
 import android.os.SystemProperties;
 import androidx.preference.PreferenceManager;
+import android.view.Display.HdrCapabilities;
+import android.view.SurfaceControl;
 
 import org.lineageos.settings.doze.DozeUtils;
 import org.lineageos.settings.thermal.ThermalUtils;
@@ -49,5 +53,11 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         FileUtils.enableService(context);
         boolean dcDimmingEnabled = sharedPrefs.getBoolean(DC_DIMMING_ENABLE_KEY, false);
         FileUtils.writeLine(DC_DIMMING_NODE, dcDimmingEnabled ? "1" : "0");
+
+        // Override HDR types
+        final IBinder displayToken = SurfaceControl.getInternalDisplayToken();
+        SurfaceControl.overrideHdrTypes(displayToken, new int[]{
+                HdrCapabilities.HDR_TYPE_DOLBY_VISION, HdrCapabilities.HDR_TYPE_HDR10,
+                HdrCapabilities.HDR_TYPE_HLG, HdrCapabilities.HDR_TYPE_HDR10_PLUS});
     }
 }
