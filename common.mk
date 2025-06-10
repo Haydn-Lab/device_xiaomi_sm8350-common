@@ -331,6 +331,10 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
+    CarrierConfigOverlaySM8350 \
+    WifiOverlaySM8350
+
+PRODUCT_PACKAGES += \
     DeviceAsWebcamOverlayCommon
 
 # Partitions
@@ -370,10 +374,6 @@ PRODUCT_COPY_FILES += \
 # QTI fwk-detect
 PRODUCT_PACKAGES += \
     libvndfwk_detect_jni.qti.vendor # Needed by CNE app
-
-# RIL
-PRODUCT_PACKAGES += \
-    CarrierConfigOverlay
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -486,7 +486,6 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
     hostapd \
     libwifi-hal-qcom \
-    WifiOverlay \
     wpa_cli \
     wpa_supplicant \
     wpa_supplicant.conf
