@@ -3,7 +3,7 @@ name: Sync to Infinity-X-Devices
 on:
   push:
     branches:
-      - Inf-15
+      - Inf
 
 jobs:
   sync:
@@ -26,4 +26,4 @@ jobs:
 
           git remote add target https://x-access-token:${{ secrets.TARGET_REPO_TOKEN }}@github.com/Infinity-X-Devices/device_xiaomi_sm8350-common.git
 
-          git push target Inf-15:15 --force
+          git push target Inf:16 --force
