@@ -77,4 +77,3 @@ persist.debug.wfd.enable=1
  ro.infinity.soc=Snapdragon® 888
  ro.infinity.battery=4520 mAh
  ro.infinity.display=1080 x 2400 , Super AMOLED 120hz
- ro.infinity.camera=108mp+8mp+5mp & 20mp
