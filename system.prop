@@ -51,6 +51,15 @@ persist.mm.enable.prefetch=true
 ro.media.recorder-max-base-layer-fps=60
 vendor.mm.enable.qcom_parser=16777215
 
+# MistOS
+ro.mist.display=1080 x 2400, 120 hz
+ro.mist.battery=4250mah
+ro.mist.soc=Snapdragon 888 5G
+ro.mist.camera=108MP + 8MP + 5MP
+ro.mist.front=20MP
+ro.mist.platform=SM8350
+ro.mist.screen=6.67' AMOLED
+
 # NFC
 ro.nfc.port=I2C
 
